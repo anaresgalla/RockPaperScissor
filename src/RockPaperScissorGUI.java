@@ -40,5 +40,14 @@ public class RockPaperScissorGUI extends JFrame {
 
         // add to GUI
         add(computerScoreLabel);
+
+        // create computer choice display
+        JLabel computerChoice = new JLabel("?"); // so it shows ? every new match
+        computerChoice.setBounds(175, 118, 98, 81);
+        computerChoice.setFont(new Font("Dialog", Font.PLAIN, 18));
+        computerChoice.setHorizontalAlignment(SwingConstants.CENTER);
+        // put a border aroud the box
+        computerChoice.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        add(computerChoice);
     }
 }
