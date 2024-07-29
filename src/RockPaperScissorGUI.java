@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class RockPaperScissorGUI extends JFrame {
+
+    // player buttons
+    JButton rockButton, paperButton, scissorButton;
+
     public RockPaperScissorGUI(){
         // invoke jframe constructor and add title to the GUI
         super("Rock Paper Scissor");
@@ -56,5 +60,22 @@ public class RockPaperScissorGUI extends JFrame {
         playerScoreLabel.setFont(new Font("Dialog", Font.BOLD, 26));
         playerScoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
         add(playerScoreLabel);
+
+        // add player buttons for rock, paper, scissor
+        // rock button
+        rockButton = new JButton("Rock");
+        rockButton.setBounds(40, 387, 105, 81);
+        rockButton.setFont(new Font("Dialog", Font.PLAIN, 18));
+        add(rockButton);
+        // paper button
+        paperButton = new JButton("Paper");
+        paperButton.setBounds(165, 387, 105, 81);
+        paperButton.setFont(new Font("Dialog", Font.PLAIN, 18));
+        add(paperButton);
+        // scissor button
+        scissorButton = new JButton("Scissors");
+        scissorButton.setBounds(290, 387, 105, 81);
+        scissorButton.setFont(new Font("Dialog", Font.PLAIN, 18));
+        add(scissorButton);
     }
 }
