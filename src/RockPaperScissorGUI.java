@@ -49,5 +49,12 @@ public class RockPaperScissorGUI extends JFrame {
         // put a border aroud the box
         computerChoice.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(computerChoice);
+
+        // create player score label
+        JLabel playerScoreLabel = new JLabel("Player: 0");
+        playerScoreLabel.setBounds(0, 317, 450, 30);
+        playerScoreLabel.setFont(new Font("Dialog", Font.BOLD, 26));
+        playerScoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        add(playerScoreLabel);
     }
 }
