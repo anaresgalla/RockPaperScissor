@@ -2,11 +2,16 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RockPaperScissorGUI extends JFrame {
 
     // player buttons
     JButton rockButton, paperButton, scissorButton;
+
+    // will display the computer choice
+    JLabel computerChoice;
 
     public RockPaperScissorGUI(){
         // invoke jframe constructor and add title to the GUI
@@ -46,7 +51,7 @@ public class RockPaperScissorGUI extends JFrame {
         add(computerScoreLabel);
 
         // create computer choice display
-        JLabel computerChoice = new JLabel("?"); // so it shows ? every new match
+        computerChoice = new JLabel("?"); // so it shows ? every new match
         computerChoice.setBounds(175, 118, 98, 81);
         computerChoice.setFont(new Font("Dialog", Font.PLAIN, 18));
         computerChoice.setHorizontalAlignment(SwingConstants.CENTER);
@@ -77,6 +82,9 @@ public class RockPaperScissorGUI extends JFrame {
         scissorButton.setBounds(290, 387, 105, 81);
         scissorButton.setFont(new Font("Dialog", Font.PLAIN, 18));
         add(scissorButton);
+
+        // dialog box test:
+        showDialog("Test Message");
     }
 
     // displays a message dialog which will show the result of the match and a try again button to play again
@@ -90,6 +98,22 @@ public class RockPaperScissorGUI extends JFrame {
         JLabel resultLabel = new JLabel(message);
         resultLabel.setFont(new Font("Dialog", Font.BOLD, 18));
         resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        resultDialog.add(resultLabel);
+        resultDialog.add(resultLabel, BorderLayout.CENTER);
+
+        // try again button
+        JButton tryAgainButton = new JButton("Try Again");
+        tryAgainButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // reset computer choice
+                computerChoice.setText("?");
+
+                // close the dialog box
+                resultDialog.dispose();
+            }
+        });
+        resultDialog.add(tryAgainButton, BorderLayout.SOUTH);
+        resultDialog.setLocationRelativeTo(this);
+        resultDialog.setVisible(true);
     }
 }
