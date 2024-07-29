@@ -78,4 +78,18 @@ public class RockPaperScissorGUI extends JFrame {
         scissorButton.setFont(new Font("Dialog", Font.PLAIN, 18));
         add(scissorButton);
     }
+
+    // displays a message dialog which will show the result of the match and a try again button to play again
+    private void showDialog(String message){
+        JDialog resultDialog = new JDialog(this, "Result", true);
+        resultDialog.setSize(227, 124);
+        resultDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        resultDialog.setResizable(false);
+
+        // message label
+        JLabel resultLabel = new JLabel(message);
+        resultLabel.setFont(new Font("Dialog", Font.BOLD, 18));
+        resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        resultDialog.add(resultLabel);
+    }
 }
