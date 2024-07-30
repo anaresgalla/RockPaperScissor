@@ -8,6 +8,18 @@ public class RockPaperScissor {
     // store the computer choice so that we can retrieve the value and display it to the frontend
     private String computerChoice;
 
+    public String getComputerChoice() {
+        return computerChoice;
+    }
+
+    public int getComputerScore() {
+        return computerScore;
+    }
+
+    public int getPlayerScore() {
+        return playerScore;
+    }
+
     // store the scores so that we can retrieve the values and display it to the frontend
     private int computerScore, playerScore;
 
@@ -64,5 +76,4 @@ public class RockPaperScissor {
         }
     return result;
     }
-
 }
